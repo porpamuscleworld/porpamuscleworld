@@ -370,35 +370,97 @@ button, input, select, textarea {
 
 /* Top Announcement Banner */
 .announcement-bar {
-  background-color: var(--bg-dark);
+  background: #0F0F11;
   color: var(--text-inverse);
-  padding: 0.6rem 1rem;
-  text-align: center;
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-bottom: 2px solid var(--accent-gold);
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1001;
+}
+
+.announcement-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .announcement-badge {
-  background-color: var(--accent-gold);
-  color: var(--bg-dark);
-  padding: 0.15rem 0.6rem;
-  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
+  color: #FFFFFF;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
   font-weight: 800;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-glow 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.announcement-text {
+  color: #F3F4F6;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.announcement-text strong {
+  color: #FFFFFF;
+  font-weight: 800;
 }
 
 .announcement-link {
-  color: var(--accent-gold);
-  text-decoration: underline;
-  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(211, 47, 47, 0.18);
+  color: #FF6B6B;
+  border: 1px solid rgba(211, 47, 47, 0.45);
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+}
+
+.announcement-link i {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.announcement-link:hover {
+  background: #D32F2F;
+  color: #FFFFFF;
+  border-color: #D32F2F;
+  box-shadow: 0 4px 14px rgba(211, 47, 47, 0.45);
+  transform: translateY(-1px);
+}
+
+.announcement-link:hover i {
+  transform: translateX(3px);
 }
 
 /* Hero Section */
