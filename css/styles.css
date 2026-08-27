@@ -17,10 +17,10 @@
   --text-muted: #6B7280;
   --text-inverse: #FFFFFF;
 
-  --accent-gold: #C59B27;
-  --accent-gold-hover: #A8811A;
-  --accent-gold-light: #FDF8EC;
-  --accent-gold-border: #E8D28A;
+  --accent-gold: #D32F2F; /* Logo Crimson Red */
+  --accent-gold-hover: #B71C1C; /* Darker Red Hover */
+  --accent-gold-light: #FFEBEE; /* Light Red Badge Tint */
+  --accent-gold-border: #FFCDD2; /* Soft Red Border */
   
   --border-color: #E5E7EB;
   --border-dark: #1F2937;
@@ -33,7 +33,7 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  --shadow-gold: 0 8px 20px rgba(197, 155, 39, 0.25);
+  --shadow-gold: 0 8px 20px rgba(211, 47, 47, 0.3);
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -162,7 +162,7 @@ button, input, select, textarea {
 
 .btn-primary {
   background-color: var(--accent-gold);
-  color: var(--bg-dark);
+  color: #FFFFFF;
   border-color: var(--accent-gold);
   box-shadow: var(--shadow-gold);
 }
