@@ -991,11 +991,11 @@ button, input, select, textarea {
 
 .plan-features li.disabled {
   color: #9CA3AF;
-  text-decoration: line-through;
+  opacity: 0.75;
 }
 
 .plan-features li.disabled i {
-  color: #D1D5DB;
+  color: #CBD5E1;
 }
 
 .sauna-addon-box {
@@ -1533,71 +1533,296 @@ button, input, select, textarea {
   opacity: 1;
 }
 
-/* Mobile Media Queries */
+/* ==========================================================================
+   Comprehensive Mobile & Multi-Device Responsiveness
+   ========================================================================== */
+
+/* Tablet & Mobile Landscape (< 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet Portrait & Mobile Navigation (< 992px) */
 @media (max-width: 992px) {
-  .hero-grid, .about-grid, .contact-grid {
+  .section-padding {
+    padding: 4.5rem 0;
+  }
+
+  .hero-grid, 
+  .about-grid, 
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  .pricing-grid {
-    grid-template-columns: 1fr 1fr;
+  .about-content-box {
+    padding-right: 0;
+  }
+
+  .site-header {
+    padding: 0.2rem 0;
+  }
+
+  .header-container {
+    height: 68px;
+  }
+
+  .brand-logo-img {
+    height: 44px;
+    max-width: 48px;
+  }
+
+  .logo-main {
+    font-size: 1.45rem;
+  }
+
+  .logo-sub {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-bottom: 4px solid var(--accent-gold);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sauna-addon-box {
     flex-direction: column;
     text-align: center;
+    padding: 1.75rem 1.5rem;
   }
 
-  .nav-menu {
-    position: fixed;
-    top: 80px;
-    left: 0;
+  .sauna-rates {
     width: 100%;
-    background-color: #FFFFFF;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    box-shadow: var(--shadow-lg);
-    border-bottom: 2px solid var(--accent-gold);
-    transform: translateY(-150%);
-    transition: var(--transition);
-  }
-
-  .nav-menu.active {
-    transform: translateY(0);
-  }
-
-  .mobile-toggle {
-    display: block;
+    justify-content: center;
   }
 }
 
-@media (max-width: 640px) {
+/* Mobile Screens (< 768px) */
+@media (max-width: 768px) {
+  .announcement-bar {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .announcement-content {
+    gap: 0.5rem;
+  }
+
+  .hero-section {
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.8rem);
+  }
+
+  .hero-quote {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-floating-card {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 1.25rem;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero-image-frame img {
+    height: 300px;
+  }
+
+  .pricing-controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    max-width: 100%;
+  }
+
+  .duration-tab {
+    width: 100%;
+    padding: 0.7rem 0.4rem;
+    font-size: 0.82rem;
+  }
+
+  .duration-tab .save-tag {
+    top: -10px;
+    right: 4px;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.35rem;
+  }
+
+  .sauna-rates {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .rate-pill {
+    width: 100%;
+  }
+
+  .gallery-grid,
+  .testimonials-grid,
+  .facilities-grid,
+  .trainers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .whatsapp-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .map-container {
+    min-height: 320px;
+  }
+}
+
+/* Small Mobile Screens (< 576px) */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: clamp(2.1rem, 7vw, 3rem);
+  }
+
+  .header-actions .btn {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.25rem;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .stat-item h3 {
+    font-size: 1.7rem;
+  }
+
+  .stat-item p {
+    font-size: 0.7rem;
+  }
+
+  .about-highlights,
+  .about-visual-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
   }
 
+  .about-img-box img,
+  .about-img-box.tall img {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .amount {
+    font-size: 2.6rem;
+  }
+
+  .modal-box {
+    padding: 1.75rem 1.25rem;
+    max-width: 95vw;
+  }
+
+  .toast-msg {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+  }
+}
+
+/* Extra Small Phones (< 380px) */
+@media (max-width: 380px) {
   .hero-stats-row {
     grid-template-columns: 1fr;
     gap: 1rem;
-    text-align: center;
   }
 
-  .about-visual-grid {
+  .logo-main {
+    font-size: 1.25rem;
+  }
+
+  .logo-sub {
+    font-size: 0.5rem;
+  }
+
+  .pricing-controls {
     grid-template-columns: 1fr;
-  }
-
-  .about-img-box.tall {
-    grid-row: auto;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .duration-tab {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.78rem;
   }
 }
