@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Porpa Muscle World Gym | Build Strength, Health & Confidence</title>
   <meta name="description"
-    content="Porpa Muscle World Gym combines expert trainers, modern equipment, and personalized programs to help you achieve lasting results. 50% OFF for the first 30 members!">
+    content="Porpa Muscle World Gym combines expert trainers, modern equipment, and personalized programs to help you achieve lasting results.">
 
   <!-- Favicon & Social Icons -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="apple-touch-icon" href="assets/images/logo.png">
   <meta property="og:title" content="Porpa Muscle World Gym | Build Strength, Health & Confidence">
   <meta property="og:description"
-    content="Porpa Muscle World Gym combines expert trainers, modern equipment, and personalized programs. 50% OFF for the first 30 members!">
+    content="Porpa Muscle World Gym combines expert trainers, modern equipment, and personalized programs.">
   <meta property="og:image" content="assets/images/logo.png">
 
   <!-- Google Fonts: Bebas Neue (Headings) & Inter (Body) -->
@@ -33,17 +33,6 @@
 
 <body>
 
-  <!-- Top Announcement Promo Banner -->
-  <div class="announcement-bar">
-    <div class="announcement-content">
-      <span class="announcement-badge"><span class="pulse-dot"></span>LIMITED PROMO</span>
-      <span class="announcement-text">🔥 <strong>50% OFF</strong> for the first 30 members!</span>
-      <a href="#pricing" class="announcement-link js-open-modal">
-        <span>Claim Offer Now</span>
-        <i class="ri-arrow-right-line"></i>
-      </a>
-    </div>
-  </div>
 
   <!-- Sticky Header Navigation -->
   <header class="site-header" id="site-header">
@@ -93,24 +82,24 @@
         </p>
         <div class="hero-cta-group">
           <a href="#pricing" class="btn btn-primary js-open-modal">
-            <i class="ri-fire-fill"></i> Claim 50% Off
+            Join Now
           </a>
           <a href="#pricing" class="btn btn-outline">
             View Memberships <i class="ri-arrow-down-line"></i>
           </a>
         </div>
-        <div class="hero-stats-row">
-          <div class="stat-item">
-            <h3>1000<span>+</span></h3>
-            <p>Active Members</p>
+        <div class="hero-features-list">
+          <div class="feature-item">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>High-End Equipment</span>
           </div>
-          <div class="stat-item">
-            <h3>15<span>+</span></h3>
-            <p>Expert Coaches</p>
+          <div class="feature-item">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>Group Fitness Classes</span>
           </div>
-          <div class="stat-item">
-            <h3>100<span>%</span></h3>
-            <p>Results Focused</p>
+          <div class="feature-item">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>Premium Facility</span>
           </div>
         </div>
       </div>
@@ -206,7 +195,15 @@
         <!-- 1. Gym -->
         <div class="facility-card">
           <div class="facility-icon-wrap">
-            <i class="ri-barbell-line"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6.5 6.5h1v11h-1z" />
+              <path d="M16.5 6.5h1v11h-1z" />
+              <path d="M7.5 9.5h9" />
+              <path d="M7.5 14.5h9" />
+              <path d="M4 8.5h2.5v7H4z" />
+              <path d="M17.5 8.5H20v7h-2.5z" />
+            </svg>
           </div>
           <h3>Gym & Free Weights</h3>
           <p>Complete strength area with dumbbells, squat racks, barbells, and plate-loaded machines.</p>
@@ -323,7 +320,7 @@
             <li class="disabled"><i class="ri-close-circle-line"></i> Group Classes (Zumba/Yoga)</li>
             <li class="disabled"><i class="ri-close-circle-line"></i> Free Sauna & Steam</li>
           </ul>
-          <a href="#contact" class="btn btn-outline js-open-modal">Select Package</a>
+          <a href="#contact" class="btn btn-outline js-open-modal" data-package="gym">Select Package</a>
         </div>
 
         <!-- Tier 2: Gym + Cardio -->
@@ -344,7 +341,7 @@
             <li class="disabled"><i class="ri-close-circle-line"></i> Group Dance/Yoga Classes</li>
             <li class="disabled"><i class="ri-close-circle-line"></i> Free Sauna & Steam</li>
           </ul>
-          <a href="#contact" class="btn btn-outline js-open-modal">Select Package</a>
+          <a href="#contact" class="btn btn-outline js-open-modal" data-package="cardio">Select Package</a>
         </div>
 
         <!-- Tier 3: Zumba + Aerobics + Yoga -->
@@ -365,7 +362,7 @@
             <li class="disabled"><i class="ri-close-circle-line"></i> Weight Room Access</li>
             <li class="disabled"><i class="ri-close-circle-line"></i> Free Sauna & Steam</li>
           </ul>
-          <a href="#contact" class="btn btn-outline js-open-modal">Select Package</a>
+          <a href="#contact" class="btn btn-outline js-open-modal" data-package="classes">Select Package</a>
         </div>
 
         <!-- Tier 4: Full Package (RECOMMENDED / FEATURED) -->
@@ -389,7 +386,7 @@
             <li><i class="ri-checkbox-circle-fill"></i> <strong>FREE Unlimited Sauna & Steam</strong></li>
             <li><i class="ri-checkbox-circle-fill"></i> Personalized Trainer Onboarding</li>
           </ul>
-          <a href="#contact" class="btn btn-primary js-open-modal">Get Full Package</a>
+          <a href="#contact" class="btn btn-primary js-open-modal" data-package="full">Get Full Package</a>
         </div>
 
       </div>
@@ -553,7 +550,7 @@
         <div class="testimonial-card">
           <div class="testimonial-quote-mark">“</div>
           <p class="testimonial-text">
-            "Best gym equipment in town. Clean facility, solid atmosphere, and the 50% discount offer made joining an
+            "Best gym equipment in town. Clean facility, solid atmosphere, and helpful staff made joining an
             absolute no-brainer."
           </p>
           <div class="testimonial-author">
@@ -615,7 +612,7 @@
           </div>
 
           <!-- Direct WhatsApp Click-to-Chat CTA Button -->
-          <a href="https://wa.me/9779865542494?text=Hi%20Porpa%20Muscle%20World%20Gym!%20I%20want%20to%20claim%20the%2050%25%20OFF%20membership%20offer."
+          <a href="https://wa.me/9779865542494?text=Hi%20Porpa%20Muscle%20World%20Gym!%20I%20want%20to%20inquire%20about%20membership."
             target="_blank" rel="noopener noreferrer" class="whatsapp-cta-btn">
             <i class="ri-whatsapp-line" style="font-size: 1.5rem;"></i> Chat on WhatsApp Now
           </a>
@@ -657,28 +654,27 @@
             aria-label="Facebook">
             <i class="ri-facebook-fill"></i>
           </a>
-          <a href="https://wa.me/9779865542494" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            aria-label="WhatsApp">
-            <i class="ri-whatsapp-line"></i>
-          </a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>&copy; 2026 Porpa Muscle World Gym (पोर्पा मसल वर्ल्ड जिम). All rights reserved.</p>
-        <p>Built with bold fitness precision & responsive design.</p>
+        <p class="developer-credit">
+          Designed & Developed by <a href="https://github.com/porpamuscleworld" target="_blank"
+            rel="noopener noreferrer" class="dev-link">Aarya Manandhar</a>
+        </p>
       </div>
     </div>
   </footer>
 
-  <!-- Lead Capture Modal (50% OFF Offer) -->
+  <!-- Lead Capture Modal -->
   <div class="modal-backdrop" id="lead-modal">
     <div class="modal-box">
       <button class="modal-close-btn" id="close-modal-btn" aria-label="Close modal">&times;</button>
       <div class="modal-header">
         <img src="assets/images/logo.png" alt="Porpa Muscle World Gym Emblem" class="modal-logo-img">
-        <h3>CLAIM YOUR 50% OFF SPOT</h3>
-        <p>Exclusive offer for the first 30 new members. Enter your details below to reserve your rate.</p>
+        <h3>JOIN PORPA MUSCLE WORLD</h3>
+        <p>Fill out the form below and our team will get in touch to help you get started on your fitness journey.</p>
       </div>
       <form class="modal-form" id="lead-form">
         <div class="form-group">
@@ -698,8 +694,17 @@
             <option value="classes">Zumba + Aerobics + Yoga</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="membership-duration">Membership Duration</label>
+          <select id="membership-duration" class="form-input" required>
+            <option value="1m">1 Month</option>
+            <option value="3m">3 Months</option>
+            <option value="6m">6 Months</option>
+            <option value="1y">1 Year</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
-          Claim My Discount &rarr;
+          Submit Request &rarr;
         </button>
       </form>
     </div>
@@ -709,7 +714,7 @@
   <div class="toast-msg" id="toast-notification">
     <i class="ri-checkbox-circle-fill" style="color: var(--accent-gold); font-size: 1.5rem;"></i>
     <div>
-      <h5 style="margin: 0; font-size: 0.95rem;">Offer Claimed Successfully!</h5>
+      <h5 style="margin: 0; font-size: 0.95rem;">Request Sent Successfully!</h5>
       <p style="margin: 0; font-size: 0.8rem; color: #9CA3AF;">Our team will contact you shortly on WhatsApp.</p>
     </div>
   </div>

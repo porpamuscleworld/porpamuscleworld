@@ -2,7 +2,7 @@
  * PORPA MUSCLE WORLD GYM — Main Interactive Script
  * Features:
  * - Pricing Duration Switcher (1 Month, 3 Months, 6 Months, 1 Year)
- * - 50% OFF Lead Capture Modal & Toast Notifications
+ * - Lead Capture Modal & Toast Notifications
  * - Mobile Navigation Menu Toggle
  * - Scroll Header Effects & Active Section Link Highlighting
  */
@@ -144,7 +144,7 @@ function initMobileNav() {
 }
 
 /**
- * 50% OFF Lead Capture Modal & Toast Logic
+ * Lead Capture Modal & Toast Logic
  */
 function initModalLogic() {
   const modalBackdrop = document.getElementById('lead-modal');
@@ -158,6 +158,24 @@ function initModalLogic() {
   openModalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+
+      // Auto-select package if specified on button
+      const pkg = btn.getAttribute('data-package');
+      const packageSelect = document.getElementById('package-interest');
+      if (pkg && packageSelect) {
+        packageSelect.value = pkg;
+      }
+
+      // Auto-select duration based on active duration tab
+      const activeDurationTab = document.querySelector('.duration-tab.active');
+      const durationSelect = document.getElementById('membership-duration');
+      if (activeDurationTab && durationSelect) {
+        const activeDuration = activeDurationTab.getAttribute('data-duration');
+        if (activeDuration) {
+          durationSelect.value = activeDuration;
+        }
+      }
+
       modalBackdrop.classList.add('active');
     });
   });
@@ -177,9 +195,15 @@ function initModalLogic() {
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      modalBackdrop.classList.remove('active');
 
-      // Reset form
+      const name = document.getElementById('full-name')?.value.trim() || '';
+      const phone = document.getElementById('phone-number')?.value.trim() || '';
+      const packageSelect = document.getElementById('package-interest');
+      const packageText = packageSelect ? packageSelect.options[packageSelect.selectedIndex].text : '';
+      const durationSelect = document.getElementById('membership-duration');
+      const durationText = durationSelect ? durationSelect.options[durationSelect.selectedIndex].text : '';
+
+      modalBackdrop.classList.remove('active');
       leadForm.reset();
 
       // Show toast
@@ -189,6 +213,13 @@ function initModalLogic() {
           toastMsg.classList.remove('show');
         }, 4000);
       }
+
+      // Open WhatsApp with pre-filled details
+      const whatsappNumber = '9779865542494';
+      const textMessage = `Hi Porpa Muscle World Gym! I would like to join. Here are my details:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🏋️ Package: ${packageText}\n⏱️ Duration: ${durationText}`;
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textMessage)}`;
+
+      window.open(whatsappUrl, '_blank');
     });
   }
 }
