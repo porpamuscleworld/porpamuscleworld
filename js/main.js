@@ -216,7 +216,7 @@ function initModalLogic() {
 
       // Open WhatsApp with pre-filled details
       const whatsappNumber = '9779865542494';
-      const textMessage = `Hi Porpa Muscle World Gym! I would like to join. Here are my details:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🏋️ Package: ${packageText}\n⏱️ Duration: ${durationText}`;
+      const textMessage = `Hi Porpa Muscle World Gym! I would like to join.\n\n*Here are my details:*\n• *Name:* ${name}\n• *Phone:* ${phone}\n• *Package:* ${packageText}\n• *Duration:* ${durationText}`;
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textMessage)}`;
 
       window.open(whatsappUrl, '_blank');
